@@ -35,26 +35,5 @@ for (let i = 0; i < td.length; i++) {
 
 
 }
-console.log(tdCount, 'global');
 
-
-  //   td.addEventListener("click", function() {
-  //     console.log('td clicked');
-  //     for (let i = 0; i < td.length; i++) {
-  //       console.log(td[i].innerHTML)
-  //     }
-  //   })
-  // }
-
-  // countTdClick();
-  // const structure = document.getElementById("structure");
-  // structure.addEventListener("click", function() {
-  //   console.log('clicked');
-  //   structure.innerHTML = console.log(`Click count:  event.detail`);
-  // }, false);
-
-
-
-  // count main clicks
-  // if odd = X
-  // if even  O
+console.log(tdCount, 'global'); //not updating why? ;/
