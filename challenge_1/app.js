@@ -7,6 +7,7 @@ for (let i = 0; i < td.length; i++) {
   td[i].addEventListener("click", function () {
     tdCount++;
     if (td[i].innerText === 'X' || td[i].innerText === 'O') {
+      tdCount --;
       return;
     } else {
       changeValue();
