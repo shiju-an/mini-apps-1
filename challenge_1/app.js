@@ -5,43 +5,35 @@ let tdCount = 0;
 
 for (let i = 0; i < td.length; i++) {
   td[i].addEventListener("click", function () {
-    // console.log('td clicked');
-    // tdCount++;
-    tdCount ++;
-    changeValue();
+    tdCount++;
+    if (td[i].innerText === 'X' || td[i].innerText === 'O') {
+      return;
+    } else {
+      changeValue();
+    }
   });
 
-function changeXValue() {
-  td[i].innerHTML = 'X';
-  // tdCount ++;
-}
+  function changeXValue() {
+    td[i].innerHTML = 'X';
+  }
 
-function changeOValue() {
-  td[i].innerHTML = 'O';
-  // tdCount ++;
-}
+  function changeOValue() {
+    td[i].innerHTML = 'O';
+  }
 
-function changeValue() {
-  // for (let i = 0; i < td.length; i++) {
+  function changeValue() {
     if (tdCount % 2 === 1) {
       td[i].onclick =
-      // function changeXValue() {
-      //   td[i].innerHTML = 'X';
-      //   tdCount ++;
-      // }
-      changeXValue();
+        changeXValue();
     }
 
     if (tdCount % 2 === 0) {
       td[i].onclick =
-      // function changeOValue() {
-      //   td[i].innerHTML = 'O';
-      //   tdCount ++;
-      // }
-      changeOValue();
-    // }
+        changeOValue();
+    }
   }
-}
+
+
 }
 console.log(tdCount, 'global');
 
