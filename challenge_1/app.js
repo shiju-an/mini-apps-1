@@ -1,7 +1,7 @@
 console.log('what is happening in life');
 
 const td = document.querySelectorAll('td');
-const cells = document.querySelectorAll('#id, .cells');
+const cells = Array.from(document.querySelectorAll('#id, .cells'));
 const rows = document.querySelectorAll('tr');
 const winCombos = [
   [cells[0], cells[1], cells[2]],
@@ -18,16 +18,6 @@ let tdCount = 0;
 
 
 for (let i = 0; i < cells.length; i++) {
-  cells[i].addEventListener("click", function () {
-    tdCount++;
-    if (cells[i].innerText === 'X' || cells[i].innerText === 'O') {
-      tdCount--;
-      return;
-    } else {
-      changeValue();
-    };
-  });
-
   function changeXValue() {
     cells[i].innerHTML = 'X';
   }
@@ -46,19 +36,30 @@ for (let i = 0; i < cells.length; i++) {
       cells[i].onclick =
         changeOValue();
     }
+    checkWin();
   }
 
   function checkWin() {
-    for (let win = 0; win < winCombos.length; win++) {
-      for (let innerCell = 0; innerCell < winCombos[win].length; innerCell++) {
-        if (winCombos[win][innerCell].innerHTML === 'X') {
-          alert('X wins');
-          return
-        }
-      }
+    if (tdCount > 3) {
+      winCombos.forEach( (combo) => {
+        console.log(combo);
+        combo.forEach( (element) => {
+          console.log(combo[element].innerHTML, 'element');
+        })
+      })
     }
   }
 
+  cells[i].addEventListener("click", function () {
+    tdCount++;
+    if (cells[i].innerText === 'X' || cells[i].innerText === 'O') {
+      tdCount--;
+      return;
+    } else {
+      changeValue();
+    };
+  });
+
 }
 
-  console.log(tdCount, 'global'); //not updating why? ;/
+// console.log(tdCount, 'global'); //not updating why? ;/
