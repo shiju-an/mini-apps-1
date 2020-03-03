@@ -1,16 +1,20 @@
 import express from 'express';
+import bodyParser from 'body-parser';
 
 const app = express();
 
 app.use(express.static('client'));
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 app.get('/upload_json', (req, res) => {
   console.log('is this getting');
+  // res.render('form');
   res.send('got ya');
 })
 
 app.post('/upload_json', (req, res) => {
-  console.log('are ya posting data ', req.body);
+  console.log('are ya posting data ', req.body.JSONdata);
   res.send('sup post');
 })
 
