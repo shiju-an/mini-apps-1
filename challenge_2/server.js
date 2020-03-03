@@ -4,10 +4,14 @@ const app = express();
 
 app.use(express.static('client'));
 
+app.get('/upload_json', (req, res) => {
+  console.log('is this getting');
+  res.send('got ya');
+})
+
 app.post('/upload_json', (req, res) => {
-  console.log('are ya posting data');
-  console.log(req.body.data);
-  res.send('sup');
+  console.log('are ya posting data ', req.body);
+  res.send('sup post');
 })
 
 
