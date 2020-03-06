@@ -34,7 +34,7 @@ class Form1 extends React.Component {
         <label>
           <input type="text" placeholder="password please" name="password" value={this.state.password} onChange={this.handleChange}></input>
         </label>
-        <input type="submit" value="Next"></input>
+        {/* <input type="submit" value="Next"></input> */}
       </form>
 
     )
